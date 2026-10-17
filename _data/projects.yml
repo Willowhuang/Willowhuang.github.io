@@ -1,0 +1,87 @@
+# All text below is grounded in the site brief. Fill null fields with approved facts.
+# Public project pages use these IDs; filenames in _projects match the IDs.
+- id: assistive-feeding
+  title: Assistive Feeding and Engagement Elicitation
+  public: true
+  featured: true
+  category: Assistive robotics · HRI
+  status: Research experience
+  summary: "Real-robot research involving assistive feeding and interaction, using platforms including Obi and Stretch."
+  motivation: "How can robots engage and assist people effectively during ongoing activities?"
+  approach: "Research involving assistive feeding, collaborative meal preparation, and interaction cues in real-robot settings."
+  contribution:
+  contribution_placeholder: "A description of my specific technical contributions will be added here."
+  details_status: "Research experience; approved technical details and demonstration materials forthcoming."
+  platforms: [Obi, Stretch]
+  media:
+    type: placeholder
+    approved: false
+    placeholder: /assets/images/placeholders/feeding.svg
+    alt: "Placeholder line illustration of a spoon and robot arm, not a photograph of an experiment."
+    caption: "Research media forthcoming"
+  links: []
+
+- id: adaptive-food-scooping
+  title: Adaptive Food Scooping
+  public: true
+  featured: true
+  category: Adaptive manipulation
+  status: Ongoing research
+  summary: "Investigating food scooping with Obi, with an interest in adapting manipulation to changing granular and semi-solid food states."
+  motivation: "Food changes as a robot interacts with it. How should scooping behavior adapt to those changes?"
+  approach: "Ongoing research on scooping granular and semi-solid foods with the Obi robot, motivated by adaptive manipulation and physical interaction."
+  contribution:
+  contribution_placeholder: "A description of my specific technical contributions will be added as the work develops."
+  details_status: "Ongoing research. Technical methods, implementation details, and experimental results will be added as the work develops."
+  platforms: [Obi]
+  media:
+    type: placeholder
+    approved: false
+    placeholder: /assets/images/placeholders/scooping.svg
+    alt: "Placeholder line illustration of a spoon above a bowl; no experimental behavior or results are depicted."
+    caption: "Ongoing work · media forthcoming"
+  links: []
+
+- id: magic-bubbles
+  title: Magic Bubbles
+  public: true
+  featured: true
+  category: Interactive robotics
+  status: Demonstration
+  summary: "An interactive robotics demonstration involving a robot-based bubble performance."
+  motivation: "Exploring an expressive, approachable form of interaction through a physical robot demonstration."
+  approach: "A robot-based bubble performance. Technical implementation details will be added with approved demonstration materials."
+  contribution:
+  contribution_placeholder: "My role and technical contributions to this demonstration will be described here."
+  details_status: "Demonstration; public video and implementation details forthcoming."
+  platforms: []
+  media:
+    type: placeholder
+    approved: false
+    placeholder: /assets/images/placeholders/bubbles.svg
+    alt: "Placeholder line illustration of bubbles and a wand, not footage of the demonstration."
+    caption: "Demonstration video forthcoming"
+  links: []
+
+- id: other-robotics
+  # Add approved LEGO robotics or other demonstration content here when supplied.
+  title: Other Robotics Projects
+  public: true
+  featured: false
+  placeholder: true
+  category: Future additions
+  status: Content in preparation
+  summary: "A space for additional robotics projects and interactive demonstrations, with details to be added."
+  motivation:
+  approach:
+  contribution:
+  contribution_placeholder: "Project descriptions, my contributions, and original media will be added here."
+  details_status: "Placeholder collection. No specific technical features or outcomes are claimed."
+  platforms: []
+  media:
+    type: placeholder
+    approved: false
+    placeholder: /assets/images/placeholders/robotics.svg
+    alt: "Abstract line illustration of connected mechanical elements, used as a project placeholder."
+    caption: "More projects forthcoming"
+  links: []

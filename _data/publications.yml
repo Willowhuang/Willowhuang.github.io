@@ -1,0 +1,4 @@
+# Publicly approved metadata only. Never store anonymous-review details here.
+# Entries render only when BOTH public and release_approved are boolean true.
+# See README.md for the complete schema. There are no approved entries yet.
+[]

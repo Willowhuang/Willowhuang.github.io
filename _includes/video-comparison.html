@@ -1,0 +1,12 @@
+{% if include.comparison.items.size > 0 %}
+<div class="content-section video-comparison-section">
+  <h2>{{ include.comparison.title | default: 'Demonstration views' | escape }}</h2>
+  {% if include.comparison.description %}<p>{{ include.comparison.description | escape }}</p>{% endif %}
+  <div class="video-comparison">
+    {% for view in include.comparison.items %}
+    {% capture comparison_id %}{{ include.id }}-view-{{ forloop.index }}{% endcapture %}
+    <div><h3>{{ view.label | escape }}</h3>{% include media.html media=view.media id=comparison_id %}</div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

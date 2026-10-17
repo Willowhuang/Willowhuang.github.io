@@ -1,0 +1,29 @@
+name: Check site
+
+on:
+  pull_request:
+  push:
+    branches: ["feature/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Validate editable content
+        run: ruby scripts/check_content.rb
+      - name: Build Jekyll
+        run: bundle exec jekyll build --strict_front_matter --trace
+        env:
+          JEKYLL_ENV: production
+      - name: Check generated pages and internal links
+        run: python3 scripts/check_site.py _site
+      - name: Check media behavior
+        run: node --test tests/media.test.cjs

@@ -1,0 +1,22 @@
+# These are editorial placeholders, not biographical claims about hobbies.
+intro: "A space for photographs, small stories, and life beyond the lab. I’ll add personal notes and original images here over time."
+gallery:
+  - title: A moment outside the lab
+    placeholder: true
+    approved: false
+    caption: "Photo collection forthcoming"
+  - title: Seen along the way
+    placeholder: true
+    approved: false
+    caption: "Photo collection forthcoming"
+  - title: Something worth remembering
+    placeholder: true
+    approved: false
+    caption: "Photo collection forthcoming"
+notes:
+  - title: Notes & reflections
+    placeholder: true
+    text: "A space for personal writing and small stories. First notes forthcoming."
+  - title: Creative pursuits & other interests
+    placeholder: true
+    text: "More about the things I enjoy outside research will be added here."

@@ -1,0 +1,29 @@
+---
+layout: homepage
+---
+{% assign project = site.data.projects | where: 'id', page.project_id | first %}
+{% if project.public == true %}
+<div class="breadcrumb"><a href="{{ '/projects/' | relative_url }}">Projects</a><span aria-hidden="true"> / </span>{{ project.title | escape }}</div>
+<p class="item-meta">{{ project.category | escape }} · {{ project.status | escape }}</p>
+<h1>{{ project.title | escape }}</h1>
+<p class="page-intro">{{ project.summary | escape }}</p>
+{% include media.html media=project.media id=project.id %}
+<div class="project-detail-body">
+  {% if project.motivation %}<h2>Research motivation</h2><p>{{ project.motivation | escape }}</p>{% endif %}
+  {% if project.approach %}<h2>Approach</h2><p>{{ project.approach | escape }}</p>{% endif %}
+  <h2>My contribution</h2>
+  {% if project.contribution %}<p>{{ project.contribution | escape }}</p>{% else %}<p class="content-placeholder">{{ project.contribution_placeholder | escape }}</p>{% endif %}
+  {% if project.platforms.size > 0 %}<p class="platforms"><strong>Platforms</strong> {{ project.platforms | join: ' · ' | escape }}</p>{% endif %}
+  <h2>Project status</h2>
+  <p>{{ project.details_status | escape }}</p>
+  {% include resource-links.html links=project.links %}
+  {% if project.comparison.items.size > 0 %}{% include video-comparison.html comparison=project.comparison id=project.id %}{% endif %}
+  {% if project.full_video %}<h2>Full demonstration</h2>{% include media.html media=project.full_video id=project.id suffix='full' %}{% endif %}
+  {{ content }}
+</div>
+<p class="back-link"><a href="{{ '/projects/' | relative_url }}"><span aria-hidden="true">←</span> All projects</a></p>
+{% else %}
+<h1>Project materials forthcoming</h1>
+<p>Public project details will be added here when available.</p>
+<p><a href="{{ '/projects/' | relative_url }}">Browse projects <span aria-hidden="true">→</span></a></p>
+{% endif %}

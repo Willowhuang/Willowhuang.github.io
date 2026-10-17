@@ -1,0 +1,72 @@
+# Minimal Light, adapted for Yuanliu Huang. See README.md for editing instructions.
+title: Yuanliu Huang
+name: Yuanliu Huang
+lang: en
+position: M.S. in Electrical and Computer Engineering
+affiliation: Carnegie Mellon University
+graduation: December 2026
+advisor: Prof. Zackory Erickson
+research_identity: Human-Centered Robotics
+description: >-
+  Yuanliu Huang is an M.S. student at Carnegie Mellon University working in
+  human-centered robotics, assistive robotics, and adaptive manipulation.
+url: "https://willowhuang.github.io"
+baseurl: ""
+
+# Set only after adding your own approved files. Empty values are safely hidden.
+avatar:
+avatar_alt: "Portrait of Yuanliu Huang"
+cv: # /assets/files/Yuanliu_Huang_CV.pdf
+email:
+github_link: https://github.com/Willowhuang
+google_scholar:
+linkedin:
+favicon: /assets/images/favicon.svg
+enable_footnote: true
+
+# The Minimal Light source is included locally; no remote theme or tracking.
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
+permalink: pretty
+strict_front_matter: true
+timezone: America/New_York
+sass:
+  style: compressed
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: homepage
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      nav: projects
+include:
+  - _pages
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - UPSTREAM.md
+  - scripts
+  - tests
+  - docs
+  - _private
+  - vendor
+  - .bundle
+  - .github
+  - .gitignore
+  - .ruby-version
+  - .review
+  - '*.bundle'
+  - '*.patch'

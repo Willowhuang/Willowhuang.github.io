@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="wrapper">
+      <header class="profile" aria-label="Profile">
+        {% include profile.html %}
+      </header>
+      <div class="content-column">
+        {% include navigation.html %}
+        <main id="main-content" tabindex="-1">
+          {{ content }}
+        </main>
+        <footer class="site-footer">
+          <span>{{ site.name | escape }} · {{ site.affiliation | escape }}</span>
+          {% if site.enable_footnote %}
+          <span>Built with <a href="https://jekyllrb.com/">Jekyll</a> &amp; <a href="https://github.com/yaoyao-liu/minimal-light">Minimal Light</a>.</span>
+          {% endif %}
+        </footer>
+      </div>
+    </div>
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+{% assign video = include.media %}
+{% assign player_id = include.id | slugify | prepend: 'video-' %}
+{% if video.approved == true %}
+  {% if video.type == 'youtube' and video.youtube_id %}
+  <div class="media-frame youtube-player" data-youtube="{{ video.youtube_id | escape }}" data-title="{{ video.title | default: 'Robotics demonstration' | escape }}" id="{{ player_id }}">
+    {% if video.poster %}<img src="{{ video.poster | relative_url }}" alt="{{ video.alt | escape }}" width="960" height="540" loading="lazy" decoding="async">{% endif %}
+    <a class="youtube-load" href="https://www.youtube.com/watch?v={{ video.youtube_id | escape }}" aria-label="Load video: {{ video.title | default: 'Robotics demonstration' | escape }}">
+      <span class="play-symbol" aria-hidden="true">▶</span><span>Load video</span><span class="youtube-disclosure">YouTube · loads on request</span>
+    </a>
+  </div>
+  {% elsif video.src %}
+  <div class="local-player" data-local-player>
+    <div class="media-frame">
+      <video id="{{ player_id }}" data-video-type="{{ video.type | escape }}" controls{% if video.type == 'autoplay' %} muted loop{% endif %} playsinline preload="none"{% if video.poster %} poster="{{ video.poster | relative_url }}"{% endif %} aria-label="{{ video.title | default: 'Robotics demonstration' | escape }}" aria-describedby="{{ player_id }}-description" width="960" height="600">
+        <source {% if video.type == 'local' %}src{% else %}data-src{% endif %}="{{ video.src | relative_url }}" type="video/mp4">
+        {% if video.captions %}<track {% if video.type == 'local' %}src{% else %}data-src{% endif %}="{{ video.captions | relative_url }}" kind="captions" srclang="{{ video.language | default: 'en' }}" label="{{ video.caption_label | default: 'English' }}" default>{% endif %}
+        Your browser does not support HTML video. <a href="{{ video.src | relative_url }}">Open the MP4 video</a>.
+      </video>
+    </div>
+    <div class="media-toolbar">
+      <button class="media-toggle" type="button" aria-controls="{{ player_id }}" aria-pressed="false" hidden>Play demonstration</button>
+      <a class="media-direct-link" href="{{ video.src | relative_url }}">Open video <span aria-hidden="true">↗</span></a>
+    </div>
+    <p class="media-message" role="status" hidden></p>
+    <p class="sr-only" id="{{ player_id }}-description">{{ video.description | default: video.alt | escape }}</p>
+    <noscript><p class="media-note">JavaScript is off. <a href="{{ video.src | relative_url }}">Watch the MP4 directly</a>.</p></noscript>
+  </div>
+  {% endif %}
+{% endif %}

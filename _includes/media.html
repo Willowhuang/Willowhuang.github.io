@@ -1,0 +1,16 @@
+{% assign media = include.media %}
+{% capture media_component_id %}{{ include.id }}{% if include.suffix %}-{{ include.suffix }}{% endif %}{% endcapture %}
+<figure class="media-figure">
+  {% if media.approved == true %}
+    {% if media.type == 'image' and media.src %}
+    <div class="media-frame"><img src="{{ media.src | relative_url }}" alt="{{ media.alt | escape }}" width="960" height="600" loading="lazy" decoding="async"></div>
+    {% elsif media.type == 'autoplay' or media.type == 'local' or media.type == 'youtube' %}
+      {% include video-player.html media=media id=media_component_id %}
+    {% else %}
+      {% include media-placeholder.html media=media %}
+    {% endif %}
+  {% else %}
+    {% include media-placeholder.html media=media %}
+  {% endif %}
+  {% if media.caption %}<figcaption>{{ media.caption | escape }}</figcaption>{% endif %}
+</figure>
