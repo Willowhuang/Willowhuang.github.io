@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img" aria-labelledby="t d">
+<title id="t">Assistive robotics media placeholder</title><desc id="d">A conceptual line drawing of a robot arm with a spoon beside a bowl. This is not an experiment image.</desc>
+<rect width="480" height="300" fill="#eef3ef"/>
+<g fill="none" stroke="#81998b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M75 212h330" stroke="#d0dcd3"/><path d="M105 209v-15h53v15m-26-15v-42l57-49 59 28"/><path d="m145 151 47-38 50 25"/><circle cx="136" cy="150" r="9" fill="#eef3ef"/><circle cx="190" cy="105" r="9" fill="#eef3ef"/><circle cx="245" cy="135" r="7" fill="#eef3ef"/><path d="m252 135 36-9"/><ellipse cx="299" cy="123" rx="15" ry="6" transform="rotate(-13 299 123)"/><path d="M285 177h87c-5 23-18 35-43 35s-38-12-44-35Z"/><path d="M281 176c0-5 22-9 49-9s48 4 48 9" stroke="#afc1b5"/>
+</g></svg>

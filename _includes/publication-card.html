@@ -1,0 +1,15 @@
+{% assign publication = include.publication %}
+{% if publication.public == true and publication.release_approved == true %}
+<article class="publication{% if publication.thumbnail %} publication--with-image{% endif %}">
+  {% if publication.thumbnail %}
+  <img class="publication-image" src="{{ publication.thumbnail | relative_url }}" alt="{{ publication.thumbnail_alt | escape }}" width="200" height="140" loading="lazy" decoding="async">
+  {% endif %}
+  <div>
+    <h3>{{ publication.title | escape }}</h3>
+    {% if publication.authors %}<p class="publication-authors">{{ publication.authors | escape }}</p>{% endif %}
+    <p class="publication-venue">{% if publication.venue %}{{ publication.venue | escape }}{% endif %}{% if publication.venue and publication.year %} · {% endif %}{{ publication.year | escape }}</p>
+    <p class="publication-status">{{ publication.status | escape }}</p>
+    {% include resource-links.html links=publication.links %}
+  </div>
+</article>
+{% endif %}

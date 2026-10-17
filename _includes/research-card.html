@@ -1,0 +1,14 @@
+{% assign theme = include.theme %}
+<article class="research-theme" id="{{ theme.id }}">
+  <p class="item-meta">{{ theme.status | escape }}</p>
+  <h2>{{ theme.title | escape }}</h2>
+  <div class="research-body">
+    <div>{% include media.html media=theme.media id=theme.id %}</div>
+    <div>
+      <p class="research-question">{{ theme.motivation | escape }}</p>
+      <p><strong>Approach.</strong> {{ theme.approach | escape }}</p>
+      {% if theme.contribution %}<p><strong>My contribution.</strong> {{ theme.contribution | escape }}</p>{% else %}<p class="content-placeholder"><strong>My contribution.</strong> {{ theme.contribution_placeholder | escape }}</p>{% endif %}
+      {% if theme.project %}<a class="detail-link" href="{{ theme.project | prepend: '/projects/' | append: '/' | relative_url }}">Explore this work <span aria-hidden="true">→</span><span class="sr-only">: {{ theme.title | escape }}</span></a>{% endif %}
+    </div>
+  </div>
+</article>

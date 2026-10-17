@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.8.5"
-
-gem "webrick", "~> 1.8"
+# Match the Jekyll series supported by GitHub Pages without extra plugins.
+gem "jekyll", "~> 3.10.0"
+gem "kramdown-parser-gfm", "~> 1.1"
+gem "webrick", "~> 1.9"

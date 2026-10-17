@@ -1,7 +1,19 @@
-_site
-.sass-cache
-Gemfile.lock
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
 *.gem
 .DS_Store
-.jekyll-cache
-git-update.sh
+.review/
+__pycache__/
+*.pyc
+# Private drafts must never enter a public Git repository.
+_private/*
+!_private/README.md
+# Keep original / uncompressed media outside this repository.
+*.mov
+*.MOV
+*.avi
+assets/videos/originals/

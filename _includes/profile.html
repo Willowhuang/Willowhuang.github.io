@@ -1,0 +1,22 @@
+<a class="profile-photo" href="{{ '/' | relative_url }}" aria-label="{{ site.name | escape }} — About">
+  {% if site.avatar %}
+  <img src="{{ site.avatar | relative_url }}" alt="{{ site.avatar_alt | escape }}" width="184" height="184" fetchpriority="high">
+  {% else %}
+  <img src="{{ '/assets/images/profile-placeholder.svg' | relative_url }}" alt="Profile photo placeholder for Yuanliu Huang" width="184" height="184">
+  {% endif %}
+</a>
+<div class="profile-text">
+  <p class="profile-name"><a href="{{ '/' | relative_url }}">{{ site.name | escape }}</a></p>
+  <p class="profile-identity">{{ site.research_identity | escape }}</p>
+  <p class="profile-affiliation">M.S. in Electrical &amp; Computer Engineering<br><strong>{{ site.affiliation | escape }}</strong></p>
+  <p class="profile-meta">Expected graduation · {{ site.graduation | escape }}</p>
+  <div class="profile-links" aria-label="Contact and academic profiles">
+    {% if site.email %}<a href="mailto:{{ site.email | escape }}">Email <span aria-hidden="true">↗</span></a>{% endif %}
+    {% if site.github_link %}<a href="{{ site.github_link | escape }}">GitHub <span aria-hidden="true">↗</span></a>{% endif %}
+    {% if site.google_scholar %}<a href="{{ site.google_scholar | escape }}">Google Scholar <span aria-hidden="true">↗</span></a>{% endif %}
+    {% if site.linkedin %}<a href="{{ site.linkedin | escape }}">LinkedIn <span aria-hidden="true">↗</span></a>{% endif %}
+    <a class="profile-cv" href="{{ '/cv/' | relative_url }}">Curriculum vitae <span aria-hidden="true">→</span></a>
+  </div>
+  {% assign profile_cv_file = site.static_files | where: 'path', site.cv | first %}
+  {% unless site.cv and profile_cv_file %}<p class="profile-note">CV PDF forthcoming</p>{% endunless %}
+</div>

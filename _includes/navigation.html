@@ -1,0 +1,10 @@
+<nav class="site-nav" aria-label="Main navigation">
+  <button class="nav-toggle" type="button" aria-controls="navigation-links" aria-expanded="false" hidden>
+    <span>Menu</span><span class="menu-icon" aria-hidden="true">☰</span>
+  </button>
+  <ul id="navigation-links" class="nav-links">
+    {% for item in site.data.navigation %}
+    <li><a href="{{ item.url | relative_url }}"{% if page.nav == item.key %} aria-current="page"{% endif %}>{{ item.title | escape }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>

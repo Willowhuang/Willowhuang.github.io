@@ -1,0 +1,19 @@
+{% assign project = include.project %}
+{% if project.public == true %}
+{% capture media_id %}{{ include.context | default: 'list' }}-{{ project.id }}{% endcapture %}
+<article class="project-row{% if include.compact %} project-row--compact{% endif %}" id="{{ include.context | default: 'list' }}-{{ project.id }}">
+  <div class="project-media">
+    {% include media.html media=project.media id=media_id %}
+  </div>
+  <div class="project-copy">
+    <p class="item-meta">{{ project.status | escape }}</p>
+    <h3><a href="{{ project.id | prepend: '/projects/' | append: '/' | relative_url }}">{{ project.title | escape }}</a></h3>
+    <p>{{ project.summary | escape }}</p>
+    {% unless include.compact %}
+      {% if project.contribution %}<p class="contribution"><strong>My contribution.</strong> {{ project.contribution | escape }}</p>{% else %}<p class="content-placeholder">Contribution details forthcoming.</p>{% endif %}
+    {% endunless %}
+    <a class="detail-link" href="{{ project.id | prepend: '/projects/' | append: '/' | relative_url }}">Project details <span aria-hidden="true">→</span><span class="sr-only">: {{ project.title | escape }}</span></a>
+    {% unless include.compact %}{% include resource-links.html links=project.links %}{% endunless %}
+  </div>
+</article>
+{% endif %}

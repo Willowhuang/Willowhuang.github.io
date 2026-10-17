@@ -1,0 +1,9 @@
+{% if include.links.size > 0 %}
+<ul class="resource-links" aria-label="Resources">
+  {% for link in include.links %}
+  {% if link.url and link.label %}
+  <li><a href="{{ link.url | relative_url }}">{{ link.label | escape }} <span aria-hidden="true">↗</span></a></li>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endif %}

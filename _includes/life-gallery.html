@@ -1,0 +1,15 @@
+<div class="life-gallery">
+  {% for photo in site.data.life.gallery %}
+  <figure class="life-photo">
+    {% if photo.approved == true and photo.src %}
+      <a href="{{ photo.full | default: photo.src | relative_url }}"><img src="{{ photo.src | relative_url }}" alt="{{ photo.alt | escape }}" width="600" height="450" loading="lazy" decoding="async"></a>
+    {% else %}
+      <div class="photo-placeholder photo-placeholder--{{ forloop.index }}" role="img" aria-label="Photo placeholder: {{ photo.title | escape }}">
+        <svg viewBox="0 0 120 90" width="120" height="90" fill="none" aria-hidden="true"><rect x="20" y="17" width="80" height="56" rx="3"/><circle cx="77" cy="34" r="6"/><path d="m25 65 23-23 19 18 12-10 16 15"/></svg>
+        <span>Photo forthcoming</span>
+      </div>
+    {% endif %}
+    <figcaption><span class="gallery-title">{{ photo.title | escape }}</span>{% if photo.caption %}<span>{{ photo.caption | escape }}</span>{% endif %}</figcaption>
+  </figure>
+  {% endfor %}
+</div>

@@ -1,0 +1,41 @@
+- id: interaction-assistance
+  title: Human–Robot Interaction and Assistive Robotics
+  status: Research experience
+  motivation: "How can robots engage and assist people effectively while an activity is already underway?"
+  approach: "My research experience includes real-robot experiments involving assistive feeding, collaborative meal preparation, and interaction cues."
+  contribution:
+  contribution_placeholder: "Specific contributions and approved technical details will be added here."
+  project: assistive-feeding
+  media:
+    type: placeholder
+    approved: false
+    placeholder: /assets/images/placeholders/feeding.svg
+    alt: "Conceptual spoon and robot-arm illustration; research media placeholder."
+    caption: "Research media forthcoming"
+- id: adaptive-manipulation
+  title: Adaptive Robot Manipulation
+  status: Ongoing research
+  motivation: "How can manipulation behavior adapt as a robot's physical interaction changes the state of food?"
+  approach: "I am investigating scooping of granular and semi-solid foods with the Obi robot, with an interest in adaptation to changing food states."
+  contribution:
+  contribution_placeholder: "Technical contributions and methods will be described as this ongoing work develops."
+  project: adaptive-food-scooping
+  media:
+    type: placeholder
+    approved: false
+    placeholder: /assets/images/placeholders/scooping.svg
+    alt: "Conceptual bowl and spoon illustration; ongoing research media placeholder."
+    caption: "Ongoing work · media forthcoming"
+- id: autonomy-safety
+  title: Shared Autonomy and Safety-Aware Robotics
+  status: Prior research
+  motivation: "How can robotic systems combine human interaction and shared autonomy with attention to safe behavior?"
+  approach: "My prior work involved shared-autonomy system development, human interaction, and safety-aware robot control."
+  contribution:
+  contribution_placeholder: "My specific system development and research contributions will be documented here."
+  media:
+    type: placeholder
+    approved: false
+    placeholder: /assets/images/placeholders/robotics.svg
+    alt: "Abstract connected mechanical elements; shared autonomy research placeholder."
+    caption: "Technical details forthcoming"
