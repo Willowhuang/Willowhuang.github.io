@@ -7,6 +7,8 @@ vendor/
 *.gem
 .DS_Store
 .review/
+*.bundle
+*.patch
 __pycache__/
 *.pyc
 # Private drafts must never enter a public Git repository.
